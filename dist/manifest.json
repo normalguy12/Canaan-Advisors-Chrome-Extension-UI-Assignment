@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "name": "Canaan Frontend UI TEST",
+  "description": "SHULEX REFERENCE",
+  "action": {
+      "default_title": "React Chrome Extension"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts":[{
+    "matches": ["https://www.amazon.co.jp/*/dp/*"],
+    "exclude_matches": ["https://www.amazon.co.jp/"],
+    "run_at": "document_idle",    
+    "js": ["contentScript.js"]
+  }]
+}
