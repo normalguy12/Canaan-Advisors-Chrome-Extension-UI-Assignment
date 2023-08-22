@@ -11,7 +11,6 @@
   ],
   "content_scripts":[{
     "matches": ["https://www.amazon.co.jp/*/dp/*"],
-    "exclude_matches": ["https://www.amazon.co.jp/"],
     "run_at": "document_idle",    
     "js": ["contentScript.js"]
   }]
