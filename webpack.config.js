@@ -5,7 +5,8 @@ const CopyPlugin = require("copy-webpack-plugin")
 module.exports = {
     entry: {
         index: path.resolve("./src/index.tsx"),
-        contentScript: path.resolve('./src/contentScript/index.tsx')
+        contentScript: path.resolve('./src/contentScript/index.tsx'),
+        background: path.resolve('./src/contentScript/background/background.tsx')
     },
     mode: "production",
     module: {
@@ -18,7 +19,10 @@ module.exports = {
                    options: {
                      compilerOptions: { noEmit: false },
                     }
-                  }],
+                  },
+                
+                
+                ],
                exclude: /node_modules/,
             },
             {
@@ -28,6 +32,13 @@ module.exports = {
                   "style-loader",
                   "css-loader"
                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|jp2|webp)$/,
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+                },
             },
         ],
     },

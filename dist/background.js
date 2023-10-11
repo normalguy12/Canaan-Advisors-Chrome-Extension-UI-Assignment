@@ -1,0 +1,1 @@
+!function(){"use strict";var n,e=[];chrome.runtime.onMessage.addListener((function(o,t){var r;"content"==o.from&&(n=null===(r=null==t?void 0:t.tab)||void 0===r?void 0:r.id,e.push(o.dataSend)),"content"==o.from&&n&&chrome.tabs.sendMessage(n,{from:"background",first:e})}))}();

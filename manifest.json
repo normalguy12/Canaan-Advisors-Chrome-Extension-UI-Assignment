@@ -9,9 +9,19 @@
   "host_permissions": [
     "<all_urls>"
   ],
+  "permissions":[
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "externally_connectable": {
+    "matches": ["https://www.amazon.co.jp/*/dp/*", "https://www.amazon.co.jp/dp/*"]
+  },
   "content_scripts":[{
-    "matches": ["https://www.amazon.co.jp/*/dp/*"],
+    "matches": ["https://www.amazon.co.jp/*/dp/*", "https://www.amazon.co.jp/dp/*"],
     "run_at": "document_idle",    
-    "js": ["contentScript.js"]
+    "js": ["contentScript.js", "index.js"]
   }]
 }
